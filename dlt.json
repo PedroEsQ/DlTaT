@@ -1,0 +1,70 @@
+{
+    "titulo" : "Dying Light Tricks & Tips",
+    "autores" : [
+        { 
+            "id" : 1,
+            "nome" : "Sansito" 
+        }, 
+        { 
+            "id" : 2,
+            "nome" : "JackAG" 
+        }
+    ],
+    "categorias" : [
+        { 
+            "id" : 1,
+            "categoria" : "Enfrentando a noite",
+            "icone" : ""
+        },
+        { 
+            "id" : 2,
+            "categoria" : "Ganhando Experiência",
+            "icone" : ""
+        
+        },
+        { 
+            "id" : 3,
+            "categoria" : "Truques de Parkour",
+            "icone" : ""
+        
+        },
+        { 
+            "id" : 4,
+            "categoria" : "Dicas de Combate",
+            "icone" : ""
+        
+        },
+        { 
+            "id" : 5,
+            "categoria" : "Habilidades Anti-Predador",
+            "icone" : ""
+        
+        },
+        { 
+            "id" : 6,
+            "categoria" : "Manual do Vigilante Noturno",
+            "icone" : ""
+        
+        }
+    ],
+    "artigos"  : [
+        {
+            "titulo" : "Introdução",
+            "imagem" : "./assets/splash.png",
+            "autor" : 1,
+            "categoria" : 1,
+            "artigo" : " Durante o dia, andamos pelos telhados e ruas das cidades em busca de recursos até o sol se por, pois depois disso, a noite toma conta, e com ela as craituras que apenas com ela podem existir, essas criaturas são os Voláteis, Noctívagos, e Predadores. Todos eles caçam durante a noite e, lugares específicos, aqui está como evitar e se defender dessas criaturas"
+
+        },
+        {
+                "titulo" : "Como andar durante o preíodo noturno?",
+                "imagem" : "./assets/splash.png",
+                "autor" : 1,
+                "categoria" : 1,
+                "artigo" : " Ao decorrer da campanha do jogo, temos dois mapas principais, as Favelas e a Cidade Velha, e nas duas temos diferenças entre suas criaturas, nas favelas os voláteis são mais fracos e menos abundantes do que a Cidade Velha, que tem voláteis diferentes e em abundância, para evita-los nas Favelas, basta seguir os circuitos de parkour que tem nos telhados, e sempre estar sobre eles. Certifique-se do caminho que você trilha e aonde vai, lembrando que deve estar sobre os telhados. Já na cidade velha é bem mais difícil, continue pelos telhados, porém com mais cautela, pois eles perambulam os telhados da cidade tambbém agora, então você pode se encontrar com um se não olhar aonde vai."
+    
+            }
+            
+    ]
+    
+}
