@@ -1,41 +1,72 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import React, {useRef, useState} from 'react';
+import {
+  Button,
+  DrawerLayoutAndroid,
+  Text,
+  StyleSheet,
+  View,
+} from 'react-native';
 
+const App = () => {
+  const drawer = useRef(null);
+  const [drawerPosition, setDrawerPosition] = useState('left');
+  const changeDrawerPosition = () => {
+    if (drawerPosition === 'left') {
+      setDrawerPosition('right');
+    } else {
+      setDrawerPosition('left');
+    }
+  };
 
-export default function App() {
-  return (
-    <View style={styles.container}>  
-      <ImageBackground 
-        style={styles.logo}
-        source={require('./assets/2023-07-30_18.41.55.png')}
-        resizeMode='cover'
-      >
-        
-        <Text
-          style={{color:'white', flex:1, display:'flex', fontSize:42, zIndex:1}}
-        >O que você está fazendo aqui? Circulando! Não tem nada aqui! Além do mais, não sei nem o que EU estou fazendo aqui.</Text>
-
-        
-      </ImageBackground>
-      <StatusBar style="auto" />
+  const navigationView = () => (
+    <View style={[styles.container, styles.navigationContainer]}>
+      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
+      <Button
+        title="Close drawer"
+        onPress={() => drawer.current.closeDrawer()}
+      />
     </View>
-      
-    
   );
-}
+
+  return (
+    <DrawerLayoutAndroid
+      ref={drawer}
+      drawerWidth={300}
+      drawerPosition={drawerPosition}
+      renderNavigationView={navigationView}>
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>Drawer on the {drawerPosition}!</Text>
+        <Button
+          title="Change Drawer Position"
+          onPress={() => changeDrawerPosition()}
+        />
+        <Text style={styles.paragraph}>
+          Swipe from the side or press button below to see it!
+        </Text>
+        <Button
+          title="Open drawer"
+          onPress={() => drawer.current.openDrawer()}
+        />
+      </View>
+    </DrawerLayoutAndroid>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#07A',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 16,
   },
-  logo: {
-    width: 1900,
-    height: 1000,
+  navigationContainer: {
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    padding: 16,
+    fontSize: 15,
+    textAlign: 'center',
   },
 });
 
-
+export default App;
